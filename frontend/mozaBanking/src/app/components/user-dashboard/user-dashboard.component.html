@@ -1,0 +1,79 @@
+<div class="container">
+  <!-- DADOS DA CONTA -->
+  <mat-card *ngIf="account && !isLoading; else loading" class="account-card">
+    <h2>Bem-vindo, {{ account.userName }}</h2>
+    <div class="account-details">
+      <p><strong>Conta:</strong> {{ account.accountNumber }}</p>
+      <div class="saldo-destaque">
+  <span>Saldo Disponível</span>
+  <h1>{{ account.balance | currency:'MZN':'symbol':'1.2-2' }}</h1>
+</div>
+      <p><strong>NUIT:</strong> {{ account.nuit }}</p>
+    </div>
+  </mat-card>
+
+  <ng-template #loading>
+    <p>Carregando dados da conta...</p>
+  </ng-template>
+
+  <!-- FORMULÁRIO DE TRANSFERÊNCIA -->
+  <mat-card *ngIf="!isLoading" class="transfer-card">
+    <mat-card-title>Efetuar Transferência</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="transferForm" (ngSubmit)="submitTransfer()">
+        <div class="form-grid">
+          <mat-form-field appearance="fill">
+            <mat-label>Conta de Origem</mat-label>
+            <input matInput formControlName="fromAccountNumber">
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Conta de Destino</mat-label>
+            <input matInput formControlName="toAccountNumber" required>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Valor</mat-label>
+            <input matInput type="number" formControlName="amount" required>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Descrição</mat-label>
+            <input matInput formControlName="description" required>
+          </mat-form-field>
+        </div>
+
+        <div class="form-actions">
+          <button mat-raised-button color="primary" type="submit" [disabled]="transferForm.invalid">
+            Transferir
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- HISTÓRICO -->
+  <mat-card class="history-card">
+    <mat-card-title>Histórico de Transações</mat-card-title>
+    <mat-card-content>
+      <table class="transaction-table">
+        <thead>
+          <tr>
+            <th>Data/Hora</th>
+            <th>Tipo</th>
+            <th>Conta</th>
+            <th>Valor (MZN)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let tx of transactions">
+            <td>{{ tx.dateTime | date:'dd/MM/yyyy HH:mm:ss' }}</td>
+            <td>{{ tx.type }}</td>
+            <td>{{ tx.otherAccount }}</td>
+            <td>{{ tx.amount | number:'1.2-2' }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </mat-card-content>
+  </mat-card>
+</div>

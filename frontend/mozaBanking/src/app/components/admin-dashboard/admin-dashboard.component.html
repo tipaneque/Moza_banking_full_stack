@@ -1,0 +1,66 @@
+
+<mat-card class="form-card">
+  <mat-card-title class="card-title">📝 Criar Conta</mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="accountForm" (ngSubmit)="onCreateAccount()">
+        <div class="form-grid">
+          <mat-form-field appearance="fill">
+            <mat-label>Nome do Cliente</mat-label>
+            <input matInput formControlName="userName">
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>NUIT</mat-label>
+            <input matInput formControlName="nuit">
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Número da Conta</mat-label>
+            <input matInput formControlName="accountNumber">
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Saldo Inicial</mat-label>
+            <input matInput formControlName="balance" type="number">
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Username do Cliente</mat-label>
+            <input matInput formControlName="username">
+          </mat-form-field>
+        </div>
+
+        <div class="button-container">
+          <button mat-raised-button color="primary" [disabled]="accountForm.invalid">Criar Conta</button>
+        </div>
+      </form>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="list-card">
+  <mat-card-title class="card-title">📋 Contas Existentes</mat-card-title>
+  <mat-card-content>
+    <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nome</th>
+              <th>NUIT</th>
+              <th>Conta</th>
+              <th>Saldo</th>
+              <th>Username</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let account of accounts">
+              <td>{{ account.id }}</td>
+              <td>{{ account.userName }}</td>
+              <td>{{ account.nuit }}</td>
+              <td>{{ account.accountNumber }}</td>
+              <td>{{ account.balance ?? 0 }}</td>
+              <td>{{ account.user?.username }}</td>
+            </tr>
+          </tbody>
+        </table>
+  </mat-card-content>
+</mat-card>
