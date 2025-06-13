@@ -76,7 +76,7 @@ A API estará disponível em: 📍 `http://localhost:8080/api/v1`
 ### 1. Acesse a pasta do frontend
 
 ```bash
-cd ../frontend
+cd ../frontend/mozaBanking
 ```
 
 ### 2. Instale as dependências
