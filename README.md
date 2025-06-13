@@ -6,7 +6,7 @@ Este repositório contém uma aplicação full stack de Internet Banking com aut
 
 ### Backend (Java - Spring Boot)
 
-- Java 17
+- Java 21
 - Spring Boot 3
 - Spring Security (JWT)
 - Spring Data JPA
@@ -14,7 +14,7 @@ Este repositório contém uma aplicação full stack de Internet Banking com aut
 
 ### Frontend (Angular)
 
-- Angular 17+
+- Angular 21+
 - Angular Material UI
 
 ---
@@ -25,7 +25,7 @@ Este projecto é composto por duas partes: **Backend (Spring Boot)** e **Fronten
 
 ### ✅ Requisitos
 
-- Java 17 ou superior
+- Java 21 ou superior
 - Maven (ou Gradle)
 - Node.js v18+ e npm (ou yarn)
 - Angular CLI:
