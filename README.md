@@ -1,6 +1,6 @@
 # 💻 Internet Banking Full Stack Application
 
-Este repositório contém uma aplicação full stack de Internet Banking com autenticação JWT, gerenciamento de contas, transferências e extratos.
+Este repositório contém uma aplicação full stack de Internet Banking com autenticação JWT, gestão de contas, transferências e extratos.
 
 ## 🧩 Tecnologias Utilizadas
 
@@ -21,7 +21,7 @@ Este repositório contém uma aplicação full stack de Internet Banking com aut
 
 ## 🚀 Deployment / Execução do Projeto
 
-Este projeto é composto por duas partes: **Backend (Spring Boot)** e **Frontend (Angular)**. Siga as instruções abaixo para executar localmente.
+Este projecto é composto por duas partes: **Backend (Spring Boot)** e **Frontend (Angular)**. Siga as instruções abaixo para executar localmente.
 
 ### ✅ Requisitos
 
@@ -48,7 +48,7 @@ cd backend
 Edite `src/main/resources/application.properties` com as credenciais corretas:
 
 ```properties
-spring.datasource.url=jdbc:mysql://localhost:3306/banking_db
+spring.datasource.url=jdbc:mysql://localhost:3306/mozadb
 spring.datasource.username=seu_usuario
 spring.datasource.password=sua_senha
 ```
@@ -126,27 +126,15 @@ java -jar target/arquivo-gerado.jar
 
 ---
 
-## 🧪 Testes
+## 🧪 Login
 
-### Backend:
-
-```bash
-./mvnw test
-```
-
-### Frontend:
-
-```bash
-ng test
-```
-
----
+O banco de dados ja tem usuários pré cadastrados
+1. user: admim1, password: admin123
+2. user: cliente1: password: senha123
 
 ## 📫 Contato
 
 Caso tenha dúvidas ou sugestões, entre em contato.
-
++258 868660661 | miropedrolino@gmail.com
 ---
-
-> Feito com 💙 para fins de aprendizado e demonstração.
 
