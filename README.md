@@ -132,6 +132,15 @@ O banco de dados ja tem usuários pré cadastrados
 1. user: admim1, password: admin123
 2. user: cliente1: password: senha123
 
+Para criar contas siga os seguintes passos:
+No banco de dados tem 10 users cliente1, cliente2, ..., cliente10
+com senhas iguais - senha123
+e dois admins, admin1 e admin2 com senhas iguais - admin123
+1. Logar com conta de um dos admins;
+2. no campo "Username do Cliente" instroduza um dos usernames dos clientes listados acima.
+3. Complete os outros campos e clique no botão"criar conta" e uma conta será criada e associada ao
+   user escolhido.
+
 ## 📫 Contato
 
 Caso tenha dúvidas ou sugestões, entre em contato.
