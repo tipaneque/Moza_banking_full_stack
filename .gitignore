@@ -1,0 +1,16 @@
+# Ignore backend builds
+/backend/target/
+/backend/bankingApi/.idea/
+/backend/bankingApi/.classpath
+/backend/bankingApi/.project
+/backend/bankingApi/.settings/
+
+# Ignore frontend builds
+/frontend/mozaBanking/dist/
+/frontend/mozaBanking/node_modules/
+/frontend/mozaBanking/.angular/
+
+# Common
+*.log
+.DS_Store
+.env
