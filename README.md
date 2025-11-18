@@ -1,8 +1,8 @@
-# 💻 Internet Banking Full Stack Application
+#  Internet Banking Full Stack Application
 
 Este repositório contém uma aplicação full stack de Internet Banking com autenticação JWT, gestão de contas, transferências e extratos.
 
-## 🧩 Tecnologias Utilizadas
+##  Tecnologias Utilizadas
 
 ### Backend (Java - Spring Boot)
 
@@ -19,11 +19,11 @@ Este repositório contém uma aplicação full stack de Internet Banking com aut
 
 ---
 
-## 🚀 Deployment / Execução do Projeto
+##  Deployment / Execução do Projeto
 
 Este projecto é composto por duas partes: **Backend (Spring Boot)** e **Frontend (Angular)**. Siga as instruções abaixo para executar localmente.
 
-### ✅ Requisitos
+###  Requisitos
 
 - Java 21 ou superior
 - Maven (ou Gradle)
@@ -35,7 +35,7 @@ Este projecto é composto por duas partes: **Backend (Spring Boot)** e **Fronten
 
 ---
 
-## 📦 Backend (Spring Boot)
+##  Backend (Spring Boot)
 
 ### 1. Acesse a pasta do backend
 
@@ -67,11 +67,11 @@ Com Gradle:
 ./gradlew bootRun
 ```
 
-A API estará disponível em: 📍 `http://localhost:8080/api/v1`
+A API estará disponível em:  `http://localhost:8080/api/v1`
 
 ---
 
-## 💻 Frontend (Angular)
+##  Frontend (Angular)
 
 ### 1. Acesse a pasta do frontend
 
@@ -91,18 +91,18 @@ npm install
 ng serve
 ```
 
-Aplicativo acessível em: 🌐 `http://localhost:4200`
+Aplicativo acessível em:  `http://localhost:4200`
 
 ---
 
-## 🔐 Autenticação JWT
+##  Autenticação JWT
 
 - O login retorna um token JWT.
 - O token é armazenado localmente no frontend e adicionado automaticamente nas requisições autenticadas.
 
 ---
 
-## 📦 Build para Produção
+##  Build para Produção
 
 ### Frontend:
 
@@ -126,9 +126,9 @@ java -jar target/arquivo-gerado.jar
 
 ---
 
-## 🧪 Login
+##  Login
 
-O banco de dados ja tem usuários pré cadastrados
+O banco de dados já tem usuários pré cadastrados
 1. user: admim1, password: admin123
 2. user: cliente1: password: senha123
 
@@ -141,9 +141,9 @@ e dois admins, admin1 e admin2 com senhas iguais - admin123
 3. Complete os outros campos e clique no botão"criar conta" e uma conta será criada e associada ao
    user escolhido.
 
-## 📫 Contato
+##  Contacto
 
 Caso tenha dúvidas ou sugestões, entre em contato.
-+258 868660661 | miropedrolino@gmail.com
++258 866661662 | miro.tipaneque@gmail.com
 ---
 
