@@ -37,4 +37,6 @@ public interface UserRepository extends JpaRepository<User, Long> {
      * @return an {@code Optional<User>} containing the matched user or empty if not found
      */
     Optional<User> findByUsername(String username);
+
+    boolean existsByUsername(String username);
 }

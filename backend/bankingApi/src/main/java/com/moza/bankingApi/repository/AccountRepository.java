@@ -33,4 +33,6 @@ public interface AccountRepository extends JpaRepository<Account, Long> {
      * @return an {@link Optional} containing the user's account, if found
      */
     Optional<Account> findByUser(User user);
+
+    boolean existsByAccountNumber(String accountNumber);
 }

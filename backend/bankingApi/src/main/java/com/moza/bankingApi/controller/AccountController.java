@@ -32,13 +32,12 @@ public class AccountController {
      * </p>
      *
      * @param request The AccountRequest containing account details.
-     * @return The created Account entity.
+     * @return a String message about the account creation status.
      */
     @PostMapping("/create")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<Account> createAccount(@RequestBody AccountRequest request) {
-        Account created = accountService.createAccount(request);
-        return ResponseEntity.ok(created);
+    public ResponseEntity<String> createAccount(@RequestBody AccountRequest request) {
+        return ResponseEntity.ok(accountService.createAccount(request));
     }
 
     /**

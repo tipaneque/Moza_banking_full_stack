@@ -47,12 +47,16 @@ public class AccountService {
      * the user identified by username in the request. Throws exception if user is not found.
      *
      * @param request the {@link AccountRequest} containing data for the new account
-     * @return the persisted {@link Account} entity
+     * @return a string with a message about the status of account creation
      * @throws EntityNotFountException if the user specified in the request does not exist
      */
-    public Account createAccount(AccountRequest request) {
-        User user = userRepo.findByUsername(request.getUsername()).orElseThrow(() -> new EntityNotFountException("Usuário encontrado!"));
+    public String createAccount(AccountRequest request) {
 
+
+        if(!userRepo.existsByUsername(request.getUsername()))
+            return "User does not exist";
+
+        User user = userRepo.findByUsername(request.getUsername()).orElseThrow(() -> new EntityNotFountException("Error Creating account"));
 
         Account account = new Account();
         account.setUser(user);
@@ -60,8 +64,9 @@ public class AccountService {
         account.setNuit(request.getNuit());
         account.setAccountNumber(request.getAccountNumber());
         account.setBalance(request.getBalance());
+        accountRepo.save(account);
 
-        return accountRepo.save(account);
+        return "Account created successful";
     }
 
     /**
