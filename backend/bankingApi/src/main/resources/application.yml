@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: bankingApi
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/mozadb
+    username: root
+    password: dev9911
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+app:
+  security:
+    secret: 8E8QbQjA2DapASBLeBRqTg3PKs+GkF1x0sYzL1IQV7s=

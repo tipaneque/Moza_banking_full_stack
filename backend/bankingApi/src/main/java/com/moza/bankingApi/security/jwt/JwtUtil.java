@@ -1,14 +1,13 @@
-package com.moza.bankingApi.security.util;
+package com.moza.bankingApi.security.jwt;
 
+import com.moza.bankingApi.config.KeyProvider;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
-
-import javax.crypto.SecretKey;
-import java.util.Base64;
 import java.util.Date;
 
 
@@ -36,16 +35,8 @@ import java.util.Date;
 @Component
 public class JwtUtil {
 
-    /**
-     * Base64-encoded symmetric key used for signing JWTs.
-     * This key must be securely stored and managed.
-     */
-    private final String SECRET = "8E8QbQjA2DapASBLeBRqTg3PKs+GkF1x0sYzL1IQV7s="; // Chave fixa gerada
-
-    /**
-     * Decoded version of the secret key used with the HMAC SHA algorithm.
-     */
-    private final SecretKey SECRET_KEY = Keys.hmacShaKeyFor(Base64.getDecoder().decode(SECRET));
+    @Autowired
+    private KeyProvider keyProvider;
 
     /**
      * Token expiration time in milliseconds. Default is 1 day (86400000 ms).
@@ -64,7 +55,7 @@ public class JwtUtil {
                 .claim("role", userDetails.getAuthorities().iterator().next().getAuthority())
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(System.currentTimeMillis() + EXPIRATION))
-                .signWith(SECRET_KEY, SignatureAlgorithm.HS256)
+                .signWith(Keys.hmacShaKeyFor(keyProvider.getSecret().getBytes()), SignatureAlgorithm.HS256)
                 .compact();
     }
 
@@ -98,7 +89,7 @@ public class JwtUtil {
      */
     private Claims getClaims(String token) {
         return Jwts.parserBuilder()
-                .setSigningKey(SECRET_KEY)
+                .setSigningKey(keyProvider.getSecret().getBytes())
                 .build()
                 .parseClaimsJws(token)
                 .getBody();

@@ -1,6 +1,6 @@
-package com.moza.bankingApi.security.config;
+package com.moza.bankingApi.security;
 
-import com.moza.bankingApi.security.filter.JwtFilter;
+import com.moza.bankingApi.security.jwt.JwtFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,6 +1,5 @@
-package com.moza.bankingApi.security.filter;
+package com.moza.bankingApi.security.jwt;
 
-import com.moza.bankingApi.security.util.JwtUtil;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -39,7 +38,7 @@ import java.io.IOException;
  * <p>This filter extends {@link OncePerRequestFilter}, ensuring it runs once per request cycle.</p>
  *
  * @author
- * @see com.moza.bankingApi.security.util.JwtUtil
+ * @see JwtUtil
  * @see org.springframework.security.web.authentication.WebAuthenticationDetailsSource
  * @see org.springframework.security.core.context.SecurityContextHolder
  */

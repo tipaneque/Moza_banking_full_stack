@@ -1,7 +1,7 @@
 package com.moza.bankingApi.controller;
 
 import com.moza.bankingApi.dto.request.AuthRequest;
-import com.moza.bankingApi.security.util.JwtUtil;
+import com.moza.bankingApi.security.jwt.JwtUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
