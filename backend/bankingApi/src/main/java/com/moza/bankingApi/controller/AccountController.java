@@ -23,7 +23,7 @@ import java.util.List;
 @RequestMapping("/api/v1/accounts")
 @RequiredArgsConstructor
 public class AccountController {
-    private final AccountService accountService;
+    private final AccountService service;
 
     /**
      * Creates a new bank account.
@@ -37,7 +37,7 @@ public class AccountController {
     @PostMapping("/create")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<String> createAccount(@RequestBody AccountRequest request) {
-        return ResponseEntity.ok(accountService.createAccount(request));
+        return ResponseEntity.ok(service.createAccount(request));
     }
 
     /**
@@ -51,7 +51,7 @@ public class AccountController {
     @GetMapping("/")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<List<Account>> getAllAccounts() {
-        return ResponseEntity.ok(accountService.getAllAccounts());
+        return ResponseEntity.ok(service.getAllAccounts());
     }
 
 
@@ -67,7 +67,7 @@ public class AccountController {
     @GetMapping("/me")
     public ResponseEntity<AccountRequest> getMyAccount(Authentication authentication) {
         String username = authentication.getName(); // username do usuário autenticado via JWT
-        AccountRequest account = accountService.getAccountByUsername(username);
+        AccountRequest account = service.getAccountByUsername(username);
         return ResponseEntity.ok(account);
     }
 

@@ -7,8 +7,6 @@ import com.moza.bankingApi.service.TransactionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -51,6 +49,6 @@ public class TransactionController {
      */
     @GetMapping("/extract")
     public ResponseEntity<List<TransactionResponse>> consultarExtrato() {
-        return ResponseEntity.ok(transactionService.extrato());
+        return ResponseEntity.ok(transactionService.getBankStatement());
     }
 }
